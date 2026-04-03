@@ -87,6 +87,12 @@
         <bt:String id="TaskpaneButton.Label" DefaultValue="Settings" />
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Open QuickCel settings and customize shortcuts" />
       </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="QuickCel Clone is loaded. Use the QuickCel group on the Home tab to open settings and customize your keyboard shortcuts." />
+        <bt:String id="TaskpaneButton.TooltipLong" DefaultValue="Open the QuickCel settings panel to customize color cycles, number formats, brand styles, and keyboard shortcuts." />
+      </bt:LongStrings>
     </Resources>
   </VersionOverrides>
+
+  <ExtendedOverrides Url="https://localhost:3000/shortcuts.json"/>
 </OfficeApp>
