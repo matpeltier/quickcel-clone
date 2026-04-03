@@ -2,6 +2,24 @@ const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const fs = require("fs");
+
+const homeDir = process.env.USERPROFILE || process.env.HOME;
+const certDir = path.join(homeDir, ".office-addin-dev-certs");
+const httpsKeyPath = path.join(certDir, "localhost.key");
+const httpsCertPath = path.join(certDir, "localhost.crt");
+
+let serverConfig = "https";
+if (fs.existsSync(httpsKeyPath) && fs.existsSync(httpsCertPath)) {
+  serverConfig = {
+    type: "https",
+    options: {
+      key: fs.readFileSync(httpsKeyPath),
+      cert: fs.readFileSync(httpsCertPath),
+    },
+  };
+}
+
 module.exports = {
   devtool: "source-map",
   entry: {
@@ -53,7 +71,7 @@ module.exports = {
     },
     compress: true,
     port: 3000,
-    server: "https",
+    server: serverConfig,
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
