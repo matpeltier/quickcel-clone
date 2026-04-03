@@ -1,0 +1,61 @@
+const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = {
+  devtool: "source-map",
+  entry: {
+    taskpane: "./src/taskpane/taskpane.tsx",
+    commands: "./src/commands/commands.ts",
+  },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].js",
+    clean: true,
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".html", ".js"],
+    alias: {
+      "@shared": path.resolve(__dirname, "src/shared"),
+      "@commands": path.resolve(__dirname, "src/commands"),
+    },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
+        test: /\.html$/,
+        use: "html-loader",
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({ filename: "[name].css" }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/taskpane/taskpane.html", to: "taskpane.html" },
+        { from: "shortcuts.json", to: "shortcuts.json" },
+        { from: "assets/", to: "assets/" },
+      ],
+    }),
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    compress: true,
+    port: 3000,
+    server: "https",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  },
+};

@@ -1,0 +1,28 @@
+{
+  "shortcuts": [
+    { "action": "fontColorCycle", "key": "Ctrl+'" },
+    { "action": "autoColor", "key": "Ctrl+Alt+A" },
+    { "action": "cellColorCycle", "key": "Ctrl+Shift+K" },
+    { "action": "brandCycle", "key": "Ctrl+Shift+J" },
+    { "action": "yearCycle", "key": "Ctrl+Shift+Y" },
+    { "action": "numberFormat", "key": "Ctrl+Shift+1" },
+    { "action": "dateFormat", "key": "Ctrl+Shift+3" },
+    { "action": "percentageFormat", "key": "Ctrl+Shift+5" },
+    { "action": "multipleFormat", "key": "Ctrl+Shift+8" },
+    { "action": "increaseDecimal", "key": "Ctrl+Alt+." },
+    { "action": "decreaseDecimal", "key": "Ctrl+Alt+," },
+    { "action": "outlineCycle", "key": "Ctrl+Shift+7" },
+    { "action": "borderBottom", "key": "Ctrl+Shift+B" },
+    { "action": "centerAcross", "key": "Ctrl+Alt+Down" },
+    { "action": "decreaseIndent", "key": "Ctrl+Alt+Left" },
+    { "action": "increaseIndent", "key": "Ctrl+Alt+Right" },
+    { "action": "heightCycle", "key": "Ctrl+Shift+H" },
+    { "action": "widthCycle", "key": "Ctrl+Shift+W" },
+    { "action": "divideBy1000", "key": "Ctrl+Shift+D" },
+    { "action": "multiplyBy1000", "key": "Ctrl+Shift+M" },
+    { "action": "negative", "key": "Ctrl+Shift+N" },
+    { "action": "specialCopy", "key": "Ctrl+Alt+X" },
+    { "action": "pasteExact", "key": "Ctrl+Alt+E" },
+    { "action": "pasteTranspose", "key": "Ctrl+Alt+T" }
+  ]
+}
