@@ -4,9 +4,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
-  xmlns:http="http://www.w3.org/2006/http"
   xsi:type="TaskPaneApp">
-  <Id>a1b2c3d4-e5f6-7890-abcd-quickcel12345</Id>
+  <Id>bc2d3e4f-5678-90ab-cdef-1234567890ab</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>QuickCel Clone</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
@@ -31,74 +30,43 @@
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="Workbook">
-        <Runtimes>
-          <Runtime resid="Taskpane.Url" lifetime="long" />
-        </Runtimes>
-        <Actions>
-          <Action xsi:type="ShowTaskpane">
-            <TaskpaneId>QuickCelSettings</TaskpaneId>
-            <SourceLocation resid="Taskpane.Url" />
-          </Action>
-        </Actions>
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title" />
+            <Description resid="GetStarted.Description" />
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl" />
+          </GetStarted>
 
-        <ExtensionPoint xsi:type="PrimaryCommandSurface">
-          <OfficeTab id="TabHome">
-            <Group id="QuickCelGroup">
-              <Label resid="CommandsGroup.Label" />
-              <Icon>
-                <bt:Image size="16" resid="Icon.16x16" />
-                <bt:Image size="32" resid="Icon.32x32" />
-                <bt:Image size="80" resid="Icon.80x80" />
-              </Icon>
-              <Control xsi:type="Button" id="TaskpaneButton">
-                <Label resid="TaskpaneButton.Label" />
-                <Supertip>
-                  <Title resid="TaskpaneButton.Label" />
-                  <Description resid="TaskpaneButton.Tooltip" />
-                </Supertip>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="QuickCelGroup">
+                <Label resid="CommandsGroup.Label" />
                 <Icon>
                   <bt:Image size="16" resid="Icon.16x16" />
                   <bt:Image size="32" resid="Icon.32x32" />
                   <bt:Image size="80" resid="Icon.80x80" />
                 </Icon>
-                <Action xsi:type="ShowTaskpane">
-                  <TaskpaneId>QuickCelSettings</TaskpaneId>
-                  <SourceLocation resid="Taskpane.Url" />
-                </Action>
-              </Control>
-            </Group>
-          </OfficeTab>
-        </ExtensionPoint>
+                <Control xsi:type="Button" id="TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label" />
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label" />
+                    <Description resid="TaskpaneButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16" />
+                    <bt:Image size="32" resid="Icon.32x32" />
+                    <bt:Image size="80" resid="Icon.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>QuickCelSettings</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
 
-        <ExtensionPoint xsi:type="KeyboardShortcut">
-          <Shortcuts>
-            <Shortcut resid="FontColorCycle.Shortcut" />
-            <Shortcut resid="AutoColor.Shortcut" />
-            <Shortcut resid="CellColorCycle.Shortcut" />
-            <Shortcut resid="BrandCycle.Shortcut" />
-            <Shortcut resid="YearCycle.Shortcut" />
-            <Shortcut resid="NumberFormat.Shortcut" />
-            <Shortcut resid="DateFormat.Shortcut" />
-            <Shortcut resid="PercentageFormat.Shortcut" />
-            <Shortcut resid="MultipleFormat.Shortcut" />
-            <Shortcut resid="IncreaseDecimal.Shortcut" />
-            <Shortcut resid="DecreaseDecimal.Shortcut" />
-            <Shortcut resid="OutlineCycle.Shortcut" />
-            <Shortcut resid="BorderBottom.Shortcut" />
-            <Shortcut resid="CenterAcross.Shortcut" />
-            <Shortcut resid="DecreaseIndent.Shortcut" />
-            <Shortcut resid="IncreaseIndent.Shortcut" />
-            <Shortcut resid="HeightCycle.Shortcut" />
-            <Shortcut resid="WidthCycle.Shortcut" />
-            <Shortcut resid="DivideBy1000.Shortcut" />
-            <Shortcut resid="MultiplyBy1000.Shortcut" />
-            <Shortcut resid="Negative.Shortcut" />
-            <Shortcut resid="SpecialCopy.Shortcut" />
-            <Shortcut resid="PasteExact.Shortcut" />
-            <Shortcut resid="PasteTranspose.Shortcut" />
-          </Shortcuts>
-        </ExtensionPoint>
-
+        </DesktopFormFactor>
       </Host>
     </Hosts>
 
@@ -110,37 +78,15 @@
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://localhost:3000" />
       </bt:Urls>
       <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="QuickCel Clone is ready!" />
+        <bt:String id="GetStarted.Description" DefaultValue="Use the QuickCel tab on the Home ribbon to open settings." />
         <bt:String id="CommandsGroup.Label" DefaultValue="QuickCel" />
         <bt:String id="TaskpaneButton.Label" DefaultValue="Settings" />
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Open QuickCel settings" />
-        <bt:String id="FontColorCycle.Shortcut" DefaultValue='{"action":"fontColorCycle","key":"Ctrl+\u0027"}' />
-        <bt:String id="AutoColor.Shortcut" DefaultValue='{"action":"autoColor","key":"Ctrl+Alt+A"}' />
-        <bt:String id="CellColorCycle.Shortcut" DefaultValue='{"action":"cellColorCycle","key":"Ctrl+Shift+K"}' />
-        <bt:String id="BrandCycle.Shortcut" DefaultValue='{"action":"brandCycle","key":"Ctrl+Shift+J"}' />
-        <bt:String id="YearCycle.Shortcut" DefaultValue='{"action":"yearCycle","key":"Ctrl+Shift+Y"}' />
-        <bt:String id="NumberFormat.Shortcut" DefaultValue='{"action":"numberFormat","key":"Ctrl+Shift+1"}' />
-        <bt:String id="DateFormat.Shortcut" DefaultValue='{"action":"dateFormat","key":"Ctrl+Shift+3"}' />
-        <bt:String id="PercentageFormat.Shortcut" DefaultValue='{"action":"percentageFormat","key":"Ctrl+Shift+5"}' />
-        <bt:String id="MultipleFormat.Shortcut" DefaultValue='{"action":"multipleFormat","key":"Ctrl+Shift+8"}' />
-        <bt:String id="IncreaseDecimal.Shortcut" DefaultValue='{"action":"increaseDecimal","key":"Ctrl+Alt+."}' />
-        <bt:String id="DecreaseDecimal.Shortcut" DefaultValue='{"action":"decreaseDecimal","key":"Ctrl+Alt+,"}' />
-        <bt:String id="OutlineCycle.Shortcut" DefaultValue='{"action":"outlineCycle","key":"Ctrl+Shift+7"}' />
-        <bt:String id="BorderBottom.Shortcut" DefaultValue='{"action":"borderBottom","key":"Ctrl+Shift+B"}' />
-        <bt:String id="CenterAcross.Shortcut" DefaultValue='{"action":"centerAcross","key":"Ctrl+Alt+Down"}' />
-        <bt:String id="DecreaseIndent.Shortcut" DefaultValue='{"action":"decreaseIndent","key":"Ctrl+Alt+Left"}' />
-        <bt:String id="IncreaseIndent.Shortcut" DefaultValue='{"action":"increaseIndent","key":"Ctrl+Alt+Right"}' />
-        <bt:String id="HeightCycle.Shortcut" DefaultValue='{"action":"heightCycle","key":"Ctrl+Shift+H"}' />
-        <bt:String id="WidthCycle.Shortcut" DefaultValue='{"action":"widthCycle","key":"Ctrl+Shift+W"}' />
-        <bt:String id="DivideBy1000.Shortcut" DefaultValue='{"action":"divideBy1000","key":"Ctrl+Shift+D"}' />
-        <bt:String id="MultiplyBy1000.Shortcut" DefaultValue='{"action":"multiplyBy1000","key":"Ctrl+Shift+M"}' />
-        <bt:String id="Negative.Shortcut" DefaultValue='{"action":"negative","key":"Ctrl+Shift+N"}' />
-        <bt:String id="SpecialCopy.Shortcut" DefaultValue='{"action":"specialCopy","key":"Ctrl+Alt+X"}' />
-        <bt:String id="PasteExact.Shortcut" DefaultValue='{"action":"pasteExact","key":"Ctrl+Alt+E"}' />
-        <bt:String id="PasteTranspose.Shortcut" DefaultValue='{"action":"pasteTranspose","key":"Ctrl+Alt+T"}' />
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Open QuickCel settings and customize shortcuts" />
       </bt:ShortStrings>
     </Resources>
-
   </VersionOverrides>
 </OfficeApp>
